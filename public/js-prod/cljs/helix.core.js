@@ -1,0 +1,2 @@
+var window=global;var $CLJS=require("./cljs_env.js");require("./cljs.core.js");require("./cljs_bean.core.js");require("./shadow.js.shim.module$react.js");
+'use strict';$CLJS.nf=new $CLJS.X(null,"children","children",-940561982);typeof Symbol!=="undefined"&&($CLJS.Ma.symbol=!0,$CLJS.Na.symbol=function(a,b){return $CLJS.F(b,['"',$CLJS.x.g(a.toString()),'"'].join(""))});
