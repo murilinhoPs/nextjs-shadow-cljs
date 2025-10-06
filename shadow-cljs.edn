@@ -17,3 +17,46 @@
                   ;; exports HelloWorldComponent as HelloWorld 
                   :modules {:hello-world {:entries [hello-world.core]
                                           :exports {HelloWorld hello-world.core/HelloWorldComponent}}}}}}
+
+#_{:source-paths ["src/cljs"]
+   :deps {}
+   :builds
+   {;; Build de Desenvolvimento
+    :app
+    {:target :esm
+     :output-dir "public/js/cljs"
+     :modules
+     {;; Módulo base para código compartilhado (cljs.core, react, etc)
+      :base
+      {:entries []}
+  
+      ;; Compila o namespace 'hello-world.core' para a rota raiz '/'
+      :root-page
+      {:entries [hello-world.core]
+       :output-to "app/page.js"
+       :depends-on #{:base}} ;; Depende do módulo base
+  
+      ;; Rota /dashboard
+      :dashboard-page
+      {:entries [app.dashboard.page]
+       :output-to "app/dashboard/page.js"
+       :depends-on #{:base}} ;; Depende do módulo base
+      }}
+  
+    ;; Build de Produção (aplicar a mesma lógica)
+    :app-release
+    {:target :esm
+     :modules
+     {:base
+      {:entries []}
+  
+      :root-page
+      {:entries [hello-world.core]
+       :output-to "app/page.js"
+       :depends-on #{:base}}
+  
+      :dashboard-page
+      {:entries [app.dashboard.page]
+       :output-to "app/dashboard/page.js"
+       :depends-on #{:base}}}}}}
+

@@ -1,7 +1,8 @@
 
-//'use client';
-import { HelloWorldComponent as HelloWorld } from "../public/js/cljs/hello_world.core.js";
+'use client';
+import { HelloWorld } from "../public/js/cljs/hello_world.core.js";
 //import { HelloWorld } from "../public/js/cljs/hello-world.js";
+import rootPageComponent from "../public/js/cljs/hello_world.core.js";
 
 export default function Home() {
   return (
