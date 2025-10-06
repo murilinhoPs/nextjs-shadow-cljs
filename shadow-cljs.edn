@@ -1,0 +1,19 @@
+{:source-paths ["src/cljs"]
+ :deps {}
+ :builds {:app {:target :npm-module
+                :output-dir "public/js/cljs"
+                :asset-path "public/resources"
+                :entries [hello-world.core]}
+          :app-release {:target :npm-module
+                        :output-dir "public/js-prod/cljs"
+                        :asset-path "public/resources"
+                        :entries [hello-world.core]}}}
+
+#_{:source-paths ["src/cljs"]
+   :deps {}
+   :builds {:app {:target :esm
+                  :output-dir "public/js/cljs"
+                  :asset-path "public/resources"
+                  ;; exports HelloWorldComponent as HelloWorld 
+                  :modules {:hello-world {:entries [hello-world.core]
+                                          :exports {HelloWorld hello-world.core/HelloWorldComponent}}}}}}

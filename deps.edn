@@ -1,0 +1,8 @@
+{:paths ["src/cljs"]
+
+ :deps {org.clojure/clojure {:mvn/version "1.12.1"}
+        org.clojure/clojurescript {:mvn/version "1.12.42"}
+        lilactown/helix {:mvn/version "0.1.11"}
+        thheller/shadow-cljs {:mvn/version "3.2.1"}}
+
+ :aliases {:dev {:main-opts ["-M" "shadow.cljs.devtools.cli" "watch" "app"]}}}
