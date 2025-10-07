@@ -1,9 +1,7 @@
-(ns hello-world.core
+(ns app.hello-world.core
   (:require [helix.core :refer [defnc $]]
             [helix.dom :as d]
             ["react-dom/client" :as rdomc]))
-
-
 
 (defnc ^:export HelloWorld [{:keys [name]}]
   (d/div

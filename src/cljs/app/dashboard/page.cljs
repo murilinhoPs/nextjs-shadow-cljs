@@ -2,7 +2,7 @@
   (:require [helix.core :refer [defnc]]
             [helix.dom :as d]))
 
-(defnc DashboardPage [props]
+(defnc DashboardPage []
   (d/div
    [:h1 "Dashboard Page (from CLJS)"]))
 

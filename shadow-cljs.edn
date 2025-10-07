@@ -3,11 +3,11 @@
  :builds {:app {:target :npm-module
                 :output-dir "public/js/cljs"
                 :asset-path "public/resources"
-                :entries [hello-world.core]}
+                :entries [app.hello-world.core]}
           :app-release {:target :npm-module
                         :output-dir "public/js-prod/cljs"
                         :asset-path "public/resources"
-                        :entries [hello-world.core]}}}
+                        :entries [app.hello-world.core]}}}
 
 #_{:source-paths ["src/cljs"]
    :deps {}
@@ -15,7 +15,7 @@
                   :output-dir "public/js/cljs"
                   :asset-path "public/resources"
                   ;; exports HelloWorldComponent as HelloWorld 
-                  :modules {:hello-world {:entries [hello-world.core]
+                  :modules {:hello-world {:entries [app.hello-world.core]
                                           :exports {HelloWorld hello-world.core/HelloWorldComponent}}}}}}
 
 #_{:source-paths ["src/cljs"]
@@ -32,7 +32,7 @@
   
       ;; Compila o namespace 'hello-world.core' para a rota raiz '/'
       :root-page
-      {:entries [hello-world.core]
+      {:entries [app.hello-world.core]
        :output-to "app/page.js"
        :depends-on #{:base}} ;; Depende do módulo base
   
@@ -51,7 +51,7 @@
       {:entries []}
   
       :root-page
-      {:entries [hello-world.core]
+      {:entries [app.hello-world.core]
        :output-to "app/page.js"
        :depends-on #{:base}}
   
